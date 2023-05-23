@@ -20,7 +20,7 @@ The entire program was written in the C programming language.
 </p>
 
 ## COPYRIGHT
-Copyright (C) 2023 by [**Reny Kipkoech**](https://github.com/Mehdi-tech-alt) and [**Stellah Mbao**](https://github.com/Nizar-Bahajoub) </br>
+Copyright (C) 2023 by [**Elmehdi ER.RAJI**](https://github.com/Mehdi-tech-alt) and [**Nizar Bahajoub**](https://github.com/Nizar-Bahajoub) </br>
 All rights reserved
 
  ## Description :
