@@ -18,6 +18,8 @@ int main(int argc, char *argv[])
 	char *input = NULL;
 	size_t bufsize = 0;
 	char *commands[MAX_COMMANDS];
+	char **command_args;
+	int i;
 	int num_commands, from_pipe = 0;
 	(void)argc;
 
@@ -34,9 +36,17 @@ int main(int argc, char *argv[])
 
 		if (num_commands > 0)
 		{
-			char **command_args = get_command(input);
+			if (strcmp(commands[0], "exit") == 0)
+			{
+				free(input);
+				exit(EXIT_SUCCESS);
+			}
+
+
+			command_args = get_command(input);
+
 			execute_command(commands[0], commands, argv[0]);
-			for (int i = 0; command_args[i] != NULL; i++)
+			for (i = 0; command_args[i] != NULL; i++)
 			{
 				free(command_args[i]);
 			}
