@@ -111,7 +111,10 @@ void execute_command(char *command, char **arguments, char *argv)
 			}
 			free(path_copy);
 		}
-		perror(command);
+		fprintf(stderr, "%s: command not found\n", argv);
+		/*
+		 * perror(command);
+		 */
 		exit(EXIT_FAILURE);
 	}
 	else
