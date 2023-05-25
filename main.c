@@ -25,15 +25,10 @@ int main(int argc, char *argv[])
 
 	while (1 && !from_pipe)
 	{
-		/**
-		 * cheks if data is from program or terminal
-		 */
 		if (isatty(STDIN_FILENO) == 0)
 			from_pipe = 1;
-
 		read_input(&input, &bufsize);
 		perse_input(input, commands, &num_commands);
-
 		if (num_commands > 0)
 		{
 			if (strcmp(commands[0], "exit") == 0)
@@ -41,10 +36,7 @@ int main(int argc, char *argv[])
 				free(input);
 				exit(EXIT_SUCCESS);
 			}
-
-
 			command_args = get_command(input);
-
 			execute_command(commands[0], commands, argv[0]);
 			for (i = 0; command_args[i] != NULL; i++)
 			{
